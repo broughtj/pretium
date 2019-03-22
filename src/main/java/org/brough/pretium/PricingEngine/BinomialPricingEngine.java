@@ -7,13 +7,19 @@ import org.brough.pretium.Pricer.Pricer;
 public class BinomialPricingEngine implements PricingEngine {
 
     int numSteps;
+    Pricer pricer;
 
     public BinomialPricingEngine(int nsteps, Pricer pricer){
+        this.pricer = pricer;
         this.numSteps = nsteps;
     }
 
     public double calculate(Option option, Pricer pricer, MarketData data){
         return pricer.price(option, data);
+    }
+
+    public void setPricingEngine(Pricer pricer) {
+        this.pricer = pricer;
     }
 
     public long getNumSteps() {

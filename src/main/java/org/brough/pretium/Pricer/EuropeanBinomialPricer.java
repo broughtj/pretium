@@ -30,7 +30,6 @@ public class EuropeanBinomialPricer implements  Pricer {
         double spotT = 0.0;
         double payoffT = 0.0;
 
-
         for(int i = 0; i < nodes; ++i){
             spotT = spot * Math.pow(u, (nsteps - i)) * Math.pow(d, i);
             payoffT += theOption.getPayoffAmount(spotT) * Util.dbinom(nsteps-i, nsteps, pu);

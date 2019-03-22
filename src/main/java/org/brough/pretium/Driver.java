@@ -31,8 +31,8 @@ public class Driver {
         OptionFacade facade1 = new OptionFacade(option, engine, data);
         System.out.println(facade1.price(euroBinom));
 
-//        engine.setThePricer(euroBinom);
-//        OptionFacade facade2 = new OptionFacade(option, engine, data);
-//        System.out.println(facade2.price());
+        engine.setPricingEngine(amerBinom);
+        OptionFacade facade2 = new OptionFacade(option, engine, data);
+        System.out.println(facade2.price(amerBinom));
     }
 }

@@ -28,13 +28,15 @@ public class Util {
         return value;
     }
 
+
+    //returns the pmf of the given binomial distribution.
     public static double dbinom(double x, double n, double p){
         double val;
 
         if(x < 0.0){
             val = 0.0;
         } else if(x <= n){
-            val = Util.choose(n, x) * Math.pow(1.0 - p, n - x);
+            val = Util.choose(n, x) * Math.pow(1.0 - p, n - x) * Math.pow(p, x);
         } else {
             val = 1.0;
         }
